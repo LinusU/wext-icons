@@ -17,9 +17,9 @@ npm install --save @wext/icons
 ```js
 const wextIcons = require('@wext/icons')
 
-const source = '<svg viewBox="0 0 64 64"><rect x="10" ...'
+const source = '<svg viewBox="0 0 64 64"><rect fill="$PRIMARY_COLOR" x="10" ...'
 
-console.log(wextIcons.extension(source, 'safari'))
+console.log(wextIcons.extension(source, 'safari', { primaryColor: '#009' }))
 //=> {
 //   spec: {
 //     '32': 'Icon-32.png',
@@ -41,8 +41,8 @@ console.log(wextIcons.extension(source, 'chrome', { shape: 'circle' }))
 //     ...
 //   },
 //   files: [
-//     { size: 48, data: Buffer < ... >, name: 'icon-48.png' },
-//     { size: 96, data: Buffer < ... >, name: 'icon-96.png' },
+//     { name: 'icon-48.png', data: Buffer < ... > },
+//     { name: 'icon-96.png', data: Buffer < ... > },
 //     ...
 //   ]
 // }
@@ -72,7 +72,7 @@ console.log(wextIcons.action(source, 'edge'))
 // }
 ```
 
-## Sizes
+## API
 
 ### Extension icon (`icons`)
 
@@ -87,10 +87,12 @@ console.log(wextIcons.action(source, 'edge'))
 
 ### Action icon (`browser_action.default_icon`)
 
-| Browser | Sizes | Notes |
-| ------- | ----- | ----- |
-| Chrome | `16`, `32` | |
-| Edge | `20`, `25`, `30`, `40` | |
-| Firefox | SVG 🎉 | |
-| Opera | `16`, `32` | |
-| Safari | `16`, `32` | (only alpha is used) |
+If the source of the SVG contains `$PRIMARY_COLOR` it will be replaced by the color matching the specific user interface for that browser. This can be used to make icons that blend in with the native UI on every platform.
+
+| Browser | Sizes | Color | Notes |
+| ------- | ----- | ----- | ----- |
+| Chrome | `16`, `32` | `#5A5A5A` | |
+| Edge | `20`, `25`, `30`, `40` | `#000000` | |
+| Firefox | SVG 🎉 | `#4A4A4B` | (`#BEBEBE` for dark themes) |
+| Opera | `16`, `32` | `#444748` | |
+| Safari | `16`, `32` | n/a | (only alpha is used) |

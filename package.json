@@ -4,9 +4,15 @@
   "license": "MIT",
   "repository": "LinusU/wext-icons",
   "scripts": {
-    "test": "standard"
+    "test": "standard && mocha"
+  },
+  "dependencies": {
+    "librsvg-prebuilt": "^0.7.5"
   },
   "devDependencies": {
+    "lodepng": "^1.1.0",
+    "mocha": "^5.0.0",
+    "pixelmatch": "^4.0.2",
     "standard": "^10.0.3"
   }
 }

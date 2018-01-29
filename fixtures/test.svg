@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64" height="64" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <rect fill="$PRIMARY_COLOR" transform="rotate(  0 32 32)" x="0" y="26" width="64" height="12" />
+  <rect fill="$PRIMARY_COLOR" transform="rotate( 45 32 32)" x="0" y="26" width="64" height="12" />
+  <rect fill="$PRIMARY_COLOR" transform="rotate( 90 32 32)" x="0" y="26" width="64" height="12" />
+  <rect fill="$PRIMARY_COLOR" transform="rotate(135 32 32)" x="0" y="26" width="64" height="12" />
+  <circle fill="$PRIMARY_COLOR" cx="32" cy="32" r="24" />
+</svg>
