@@ -35,7 +35,7 @@ exports.action = function (source, browser) {
 
   if (browser === 'firefox') {
     spec['32'] = 'action.svg'
-    files.push({ name: 'action.svg', data: coloredSource })
+    files.push({ name: 'action.svg', data: Buffer.from(coloredSource) })
   } else {
     const svg = new Rsvg(coloredSource)
 
@@ -72,7 +72,7 @@ exports.extension = function (source, browser, options = {}) {
 
   if (browser === 'firefox') {
     spec['32'] = 'icon.svg'
-    files.push({ name: 'icon.svg', data: coloredSource })
+    files.push({ name: 'icon.svg', data: Buffer.from(coloredSource) })
   } else if (browser === 'chrome') {
     const paddedSource = [
       '<?xml version="1.0" encoding="UTF-8"?>',
