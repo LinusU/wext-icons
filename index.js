@@ -48,6 +48,11 @@ exports.action = function (source, browser) {
       files.push({ name: 'action-25.png', data: svg.render({ format: 'png', width: 25, height: 25 }).data })
       files.push({ name: 'action-30.png', data: svg.render({ format: 'png', width: 30, height: 30 }).data })
       files.push({ name: 'action-40.png', data: svg.render({ format: 'png', width: 40, height: 40 }).data })
+    } else if (browser === 'safari') {
+      spec['16'] = 'action.png'
+      spec['32'] = 'action@2x.png'
+      files.push({ name: 'action.png', data: svg.render({ format: 'png', width: 16, height: 16 }).data })
+      files.push({ name: 'action@2x.png', data: svg.render({ format: 'png', width: 32, height: 32 }).data })
     } else {
       spec['16'] = 'action-16.png'
       spec['32'] = 'action-32.png'
