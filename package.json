@@ -7,7 +7,7 @@
     "test": "standard && mocha"
   },
   "dependencies": {
-    "librsvg-prebuilt": "^0.7.5"
+    "librsvg-prebuilt": "^0.7.8"
   },
   "devDependencies": {
     "lodepng": "^1.1.0",
